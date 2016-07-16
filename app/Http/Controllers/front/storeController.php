@@ -16,7 +16,7 @@ class storeController extends Controller
     	if(is_null($store)) {
     		abort(404, 'something went wrong...');
     	}
-    	return view('front.store.index');
+    	return view('front.store.index', compact('store'));
     }
 
 

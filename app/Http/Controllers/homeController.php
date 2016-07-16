@@ -50,10 +50,12 @@ class HomeController extends Controller
 
     public function getStore($kota) {
         $slug = strtoupper(str_replace('-', ' ', $kota));
-        $id_kota = kota::where('name', $slug)->first()->id;
-        $kota = kota::find($id_kota);
-
-        $stores = store::where('location', $id_kota)->get();
+        $id_kota = kota::where('name', $slug)->first();
+        if(is_null($id_kota)) {
+            abort(404,'something went wrong..');
+        }
+        $kota = kota::find($id_kota->id);
+        $stores = store::where('location', $id_kota->id)->get();
         return view('front.list-store', compact('stores', 'kota'));
     }
 

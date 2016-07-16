@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>DASHGUM - FREE Bootstrap Admin Template</title>
+    <title>{{Auth::guard('owner')->user()->store->store_name}} - Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('public/back/owner/css/bootstrap.css') }}" rel="stylesheet">
@@ -197,8 +197,10 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
+              	  <p class="centered"><a href="profile.html"><img src="{{asset('public/back/owner/img/ui-sam.jpg')}}" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered">{!! Auth::guard('owner')->user()->name!!}</h5>
+                  <br>
+                  <center><a href="{{url('toko/'.Auth::guard('owner')->user()->store->slug)}}">View store</a></center>
               	  	
                   <li class="mt">
                       <a class="active" href="index.html">

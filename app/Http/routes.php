@@ -7,7 +7,7 @@
 |
 | Here is where you can register all of the routes for an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
+| and give it the controsller to call when that URI is requested.
 |
 */
 
@@ -19,7 +19,7 @@ Route::post('store', 'homeController@findStore');
 Route::get('store/{kota}', 'homeController@getStore');
 
 
-Route::get('stores/{slug}', 'front\storeController@index');
+Route::get('toko/{slug}', 'front\storeController@index');
 
 Route::get('dashboard/view', 'back\owner\dashboardController@index');
 
@@ -32,11 +32,8 @@ Route::get('dashboard/view', 'back\owner\dashboardController@index');
     Route::get('owner/register', 'Auth\owner\AuthController@showRegistrationForm');
     Route::post('owner/register', 'Auth\owner\AuthController@register');
 
-    Route::get('/owner', 'AdminController@index');
 
-    Route::get('checkuser', function() {
 
-    });
 
     
 

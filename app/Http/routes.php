@@ -19,8 +19,26 @@ Route::post('store', 'homeController@findStore');
 Route::get('store/{kota}', 'homeController@getStore');
 
 
-Route::get('{slug}', 'front\storeController@index');
+Route::get('stores/{slug}', 'front\storeController@index');
 
+Route::get('dashboard/view', 'back\owner\dashboardController@index');
+
+
+ 	Route::get('/owner/login','Auth\owner\AuthController@showLoginForm');
+    Route::post('/owner/login','Auth\owner\AuthController@login');
+    Route::get('/owner/logout','Auth\owner\AuthController@logout');
+
+    // Registration Routes...
+    Route::get('owner/register', 'Auth\owner\AuthController@showRegistrationForm');
+    Route::post('owner/register', 'Auth\owner\AuthController@register');
+
+    Route::get('/owner', 'AdminController@index');
+
+    Route::get('checkuser', function() {
+
+    });
+
+    
 
 //Route::get('image', function() {
 //

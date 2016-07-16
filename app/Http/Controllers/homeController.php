@@ -7,6 +7,7 @@ use App\provinsi;
 use App\kota;
 use App\store;
 use Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -19,11 +20,14 @@ class HomeController extends Controller
     public function index()
     {
 
+        if(Auth::guard('owner')->check()) {
+            return view('back.owner.index');
+        }
+
         $provinsi = provinsi::orderBy('name', 'asc')->pluck('name', 'id');
         return view('front.home', compact('provinsi'));
 
     }
-
 
     public function getKota() {
         $kota = kota::where('province_id', Request::get('provinsi'))->orderBy('name', 'asc')->get();
@@ -52,4 +56,6 @@ class HomeController extends Controller
         $stores = store::where('location', $id_kota)->get();
         return view('front.list-store', compact('stores', 'kota'));
     }
+
+    
 }

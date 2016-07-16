@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : DB
 Source Server Version : 50624
 Source Host           : localhost:3306
-Source Database       : cloudseller
+Source Database       : cloudshopping
 
 Target Server Type    : MYSQL
 Target Server Version : 50624
 File Encoding         : 65001
 
-Date: 2016-07-13 08:33:01
+Date: 2016-07-17 04:58:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -547,6 +547,27 @@ INSERT INTO `tbl_kota` VALUES ('9436', '94', 'KABUPATEN DEIYAI');
 INSERT INTO `tbl_kota` VALUES ('9471', '94', 'KOTA JAYAPURA');
 
 -- ----------------------------
+-- Table structure for tbl_owner
+-- ----------------------------
+DROP TABLE IF EXISTS `tbl_owner`;
+CREATE TABLE `tbl_owner` (
+  `id_owner` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `remember_token` varchar(255) DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  PRIMARY KEY (`id_owner`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tbl_owner
+-- ----------------------------
+INSERT INTO `tbl_owner` VALUES ('1', 'rifki alfaridzi', 'alfaridzi', '$2y$10$7NJ4thXHe.wQPFjNrwEJzOa4Es/oJsl3XwpHf4tnF.wTenqIGqf8q', 'webmaster@rifkialfaridzi.com', 'vNaAxb6K0b7DvSEW5Ouo58FBVGzmUt042Oh4CLMCjyL2BCicoru84FN81zpw', '2016-07-17', null);
+
+-- ----------------------------
 -- Table structure for tbl_provinsi
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_provinsi`;
@@ -599,6 +620,7 @@ INSERT INTO `tbl_provinsi` VALUES ('94', 'PAPUA');
 -- ----------------------------
 DROP TABLE IF EXISTS `tbl_store`;
 CREATE TABLE `tbl_store` (
+  `id_owner` int(11) NOT NULL,
   `id_store` int(11) NOT NULL AUTO_INCREMENT,
   `slug` varchar(255) DEFAULT NULL,
   `store_name` varchar(255) DEFAULT NULL,
@@ -612,7 +634,7 @@ CREATE TABLE `tbl_store` (
 -- ----------------------------
 -- Records of tbl_store
 -- ----------------------------
-INSERT INTO `tbl_store` VALUES ('1', 'alfaridzistore', 'Toko buah emiri', 'Kami menjual berbagai macam barang berkualitas dan bergaransi', 'work1.png', '3271', '');
-INSERT INTO `tbl_store` VALUES ('2', 'tes', 'Elisa\'z store', 'All about fashion and anything is here. we have a lot a product with high quality', 'work1.png', '3271', '');
-INSERT INTO `tbl_store` VALUES ('3', 'tests', 'Hairdresser', 'Branding', 'work1.png', '3271', '');
-INSERT INTO `tbl_store` VALUES ('4', 'testsss', 'Hairdresser', 'Branding', 'work1.png', '3271', '');
+INSERT INTO `tbl_store` VALUES ('1', '1', 'alfaridzistore', 'Toko buah emiri', 'Kami menjual berbagai macam barang berkualitas dan bergaransi', 'work1.png', '3271', '');
+INSERT INTO `tbl_store` VALUES ('0', '2', 'tes', 'Elisa\'z store', 'All about fashion and anything is here. we have a lot a product with high quality', 'work1.png', '3271', '');
+INSERT INTO `tbl_store` VALUES ('0', '3', 'tests', 'Hairdresser', 'Branding', 'work1.png', '3271', '');
+INSERT INTO `tbl_store` VALUES ('0', '4', 'testsss', 'Hairdresser', 'Branding', 'work1.png', '3271', '');

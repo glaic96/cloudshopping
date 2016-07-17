@@ -45,7 +45,7 @@ class HomeController extends Controller
     public function findStore() {
         $kota = kota::find(Request::get('kota'));
         $slug = strtolower(str_replace(' ', '-', $kota->name));
-        return redirect('store/'.$slug);
+        return redirect('kota/'.$slug);
     }
 
     public function getStore($kota) {

@@ -16,10 +16,10 @@ Route::get('/', 'homeController@index');
 Route::post('getKota', 'homeController@getKota');
 
 Route::post('store', 'homeController@findStore');
-Route::get('store/{kota}', 'homeController@getStore');
+Route::get('kota/{kota}', 'homeController@getStore');
 
 
-Route::get('toko/{slug}', 'front\storeController@index');
+Route::get('store/{slug}', 'front\storeController@index');
 
 Route::get('dashboard/view', 'back\owner\dashboardController@index');
 

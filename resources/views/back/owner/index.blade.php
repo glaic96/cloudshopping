@@ -200,7 +200,7 @@
               	  <p class="centered"><a href="profile.html"><img src="{{asset('public/back/owner/img/ui-sam.jpg')}}" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">{!! Auth::guard('owner')->user()->name!!}</h5>
                   <br>
-                  <center><a href="{{url('toko/'.Auth::guard('owner')->user()->store->slug)}}">View store</a></center>
+                  <center><a href="{{url('store/'.Auth::guard('owner')->user()->store->slug)}}">View store</a></center>
               	  	
                   <li class="mt">
                       <a class="active" href="index.html">

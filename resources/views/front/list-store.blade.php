@@ -91,7 +91,7 @@
 								<p>{!!$store->short_desc!!}</p>
 							</div>
 							<div class="overlay-caption">
-								<a class="btn-view" href="{!! url('toko/'.$store->slug) !!}">VIEW STORE<i class="fa fa-angle-right"></i></a>
+								<a class="btn-view" href="{!! url('store/'.$store->slug) !!}">VIEW STORE<i class="fa fa-angle-right"></i></a>
 							</div>
 						</div>
 					</div>

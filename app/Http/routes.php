@@ -16,7 +16,7 @@ Route::get('/', 'homeController@index');
 Route::post('getKota', 'homeController@getKota');
 
 Route::post('store', 'homeController@findStore');
-Route::get('kota/{kota}', 'homeController@getStore');
+Route::get('list/{kota}', 'homeController@getStore');
 
 
 Route::get('store/{slug}', 'front\storeController@index');
